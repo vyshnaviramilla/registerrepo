@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Event Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <div>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError" class="error"></span>
+        </div>
+        
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+        </div>
+        
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone" name="phone" required>
+            <span id="phoneError" class="error"></span>
+        </div>
+        
+        <div>
+            <label for="event">Choose Event:</label>
+            <select id="event" name="event" required>
+                <option value="">Select an event</option>
+                <option value="workshop">Workshop</option>
+                <option value="seminar">Seminar</option>
+                <option value="conference">Conference</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let event = document.getElementById("event").value;
+
+        let nameError = document.getElementById("nameError");
+        let emailError = document.getElementById("emailError");
+        let phoneError = document.getElementById("phoneError");
+
+        let valid = true;
+
+        // Reset error messages
+        nameError.textContent = "";
+        emailError.textContent = "";
+        phoneError.textContent = "";
+
+        // Check if name is valid
+        if (name === "") {
+            nameError.textContent = "Name is required.";
+            valid = false;
+        }
+
+        // Check if email is valid
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!email.match(emailPattern)) {
+            emailError.textContent = "Please enter a valid email address.";
+            valid = false;
+        }
+
+        // Check if phone number is valid
+        if (phone.length < 10) {
+            phoneError.textContent = "Please enter a valid phone number.";
+            valid = false;
+        }
+
+        // Check if event is selected
+        if (event === "") {
+            alert("Please select an event.");
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
+</body>
+</html>
