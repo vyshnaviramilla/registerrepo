@@ -1,0 +1,540 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Resume Header */
+.resume-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* Profile Photo */
+.profile-photo-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.resume-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 2;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info span {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+/* Resume Sections */
+.resume-section {
+    padding: 40px;
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.resume-section:hover {
+    background: linear-gradient(to right, #f7fafc, #ffffff);
+}
+
+.resume-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #667eea;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #667eea;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.resume-section p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+/* Education Items */
+.education-item {
+    margin-bottom: 25px;
+    padding: 18px;
+    background: linear-gradient(to right, #f7fafc, #ffffff);
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.15);
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+
+.degree {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.degree strong {
+    color: #2d3748;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.school {
+    display: block;
+    color: #667eea;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.gpa {
+    font-size: 13px;
+    color: #667eea;
+    margin: 8px 0 0 0;
+    font-weight: 600;
+}
+
+/* Project Items */
+.project-item {
+    margin-bottom: 25px;
+    padding: 18px;
+    background: linear-gradient(to right, #f7fafc, #ffffff);
+    border-left: 4px solid #764ba2;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 16px rgba(118, 75, 162, 0.15);
+}
+
+.project-item strong {
+    display: block;
+    font-size: 14px;
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.project-item p {
+    font-size: 13px;
+    color: #4a5568;
+    margin: 0;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.project-item p {
+    font-size: 13px;
+    color: #4a5568;
+    margin: 0;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.project-item ul {
+    margin: 8px 0 0 20px;
+    padding-left: 0;
+    font-size: 13px;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.project-item li {
+    margin-bottom: 5px;
+}
+
+/* Skills Categories */
+.skills-category {
+    margin-bottom: 12px;
+}
+
+.skills-category strong {
+    display: block;
+    color: #2d3748;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.skills-category p {
+    font-size: 13px;
+    color: #4a5568;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Lists */
+.interests-list,
+.achievements-list,
+.strengths-list {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.interests-list li,
+.achievements-list li,
+.strengths-list li {
+    margin-bottom: 8px;
+}
+
+/* Career Goals */
+.career-goals p {
+    font-size: 13px;
+    color: #4a5568;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.career-goals strong {
+    color: #2d3748;
+}
+
+/* Action Buttons */
+.cv {
+    text-align: center;
+    padding: 35px 40px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-top: 2px solid #e2e8f0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-buttons a {
+    text-decoration: none;
+}
+
+button {
+    padding: 14px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f91 100%);
+}
+
+.print-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.print-btn:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+.print-resume-btn {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+}
+
+.print-resume-btn:hover {
+    background: linear-gradient(135deg, #dd6b20 0%, #c05621 100%);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #2d3748;
+    color: #cbd5e0;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Resume Print Mode - Hide projects section */
+body.resume-print-mode .resume-section:nth-child(4) {
+    display: none;
+}
+
+/* Hide extra sections on website, show only in print */
+.resume-section.resume-only {
+    display: none;
+}
+
+/* Print Styles */
+@media print {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .resume-header::before {
+        content: "VYSHNAVI RAMILLA "- PORTFOLIO & RESUME";
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 5px;
+        color: #1a1a1a;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+    }
+    
+    body.resume-print-mode .resume-header::before {
+        content: "VYSHNAVI RAMILLA " - PROFESSIONAL RESUME";
+    }
+    
+    .resume-header {
+        background: white;
+        color: #000;
+        border-bottom: 2px solid #000;
+        padding: 15px 20px;
+        page-break-inside: avoid;
+    }
+    
+    .resume-header::after {
+        display: none;
+    }
+    
+    .profile-photo {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #000;
+    }
+    
+    .profile-photo-container {
+        margin-bottom: 15px;
+    }
+    
+    .resume-header h1 {
+        font-size: 28px;
+        color: #000;
+        margin-bottom: 3px;
+        text-shadow: none;
+    }
+    
+    .subtitle {
+        color: #333;
+        font-size: 13px;
+    }
+    
+    .contact-info {
+        color: #333;
+        font-size: 11px;
+    }
+    
+    .action-buttons {
+        display: none;
+    }
+    
+    .cv {
+        display: none;
+    }
+    
+    .resume-section {
+        page-break-inside: avoid;
+        padding: 15px 20px;
+        border-bottom: 1px solid #ccc;
+        background: white;
+    }
+    
+    .resume-section.resume-only {
+        display: block;
+    }
+    
+    .resume-section:hover {
+        background: white;
+    }
+    
+    .section-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: #000;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 12px;
+    }
+    
+    .resume-section p {
+        font-size: 11px;
+        line-height: 1.5;
+        color: #333;
+        text-align: justify;
+    }
+    
+    .education-item {
+        margin-bottom: 12px;
+        padding: 10px;
+        background: white;
+        border-left: 2px solid #000;
+    }
+    
+    .education-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .degree {
+        font-size: 11px;
+    }
+    
+    .school {
+        font-size: 10px;
+        color: #555;
+    }
+    
+    .gpa {
+        font-size: 10px;
+        color: #555;
+    }
+    
+    .project-item {
+        margin-bottom: 12px;
+        page-break-inside: avoid;
+        padding: 10px;
+        background: white;
+        border-left: 2px solid #000;
+    }
+    
+    .project-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .project-item strong {
+        font-size: 11px;
+        color: #000;
+    }
+    
+    .project-item p {
+        font-size: 10px;
+        line-height: 1.4;
+        color: #444;
+    }
+    
+    footer {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+}
